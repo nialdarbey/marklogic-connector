@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?artifactRepository version='1.1.0'?>
+<repository name='file:/Users/nialdarbey/Downloads/marklogic-connector/target/update-site/ - artifacts' type='org.eclipse.equinox.p2.artifact.repository.simpleRepository' version='1'>
+  <properties size='2'>
+    <property name='p2.timestamp' value='1348080588885'/>
+    <property name='p2.compressed' value='false'/>
+  </properties>
+  <mappings size='3'>
+    <rule filter='(&amp; (classifier=osgi.bundle))' output='${repoUrl}/plugins/${id}_${version}.jar'/>
+    <rule filter='(&amp; (classifier=binary))' output='${repoUrl}/binary/${id}_${version}'/>
+    <rule filter='(&amp; (classifier=org.eclipse.update.feature))' output='${repoUrl}/features/${id}_${version}.jar'/>
+  </mappings>
+  <artifacts size='2'>
+    <artifact classifier='org.eclipse.update.feature' id='org.mule.tooling.ui.extension.marklogic-connector-old' version='1.0.0.201209191549'>
+      <properties size='4'>
+        <property name='artifact.size' value='3951'/>
+        <property name='download.size' value='3951'/>
+        <property name='download.md5' value='dc44cb2df2aaa77d1c9e5d12af818a3b'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.mule.tooling.ui.contribution.marklogic' version='1.0.0.201209191549'>
+      <properties size='3'>
+        <property name='artifact.size' value='390932'/>
+        <property name='download.size' value='390932'/>
+        <property name='download.md5' value='c25922a5463eb9de4901176d3a5b805b'/>
+      </properties>
+    </artifact>
+  </artifacts>
+</repository>

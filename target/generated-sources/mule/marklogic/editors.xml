@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<namespace xmlns="http://www.mulesoft.org/schema/mule/tooling.attributes" xmlns:mule="http://www.mulesoft.org/schema/mule/core" prefix="marklogic" url="http://www.mulesoft.org/schema/mule/marklogic">
+  <global-cloud-connector extends="http://www.mulesoft.org/schema/mule/marklogic/abstractMarklogicConnectorGeneric" abstract="true" image="" localId="parentConfig" icon="" description="" caption="MarkLogic"></global-cloud-connector>
+  <global-cloud-connector extends="http://www.mulesoft.org/schema/mule/marklogic/parentConfig" abstract="false" image="icons/large/marklogic-connector-48x32.png" localId="config" icon="icons/small/marklogic-connector-24x16.png" description="Global MarkLogic configuration information." caption="MarkLogic">
+    <attribute-category description="Marklogic configuration properties." caption="General">
+      <group caption="Generic" id="marklogicGenericProperties">
+        <name required="true" description="Give a name to this configuration so it can be later referenced by config-ref." caption="Name" name="name"></name>
+      </group>
+      <group caption="General" id="general">
+        <string javaType="java.lang.String" required="true" description="Configurable." caption="Server" name="server"></string>
+        <integer step="1" min="0" javaType="int" required="true" description="Configurable." caption="Port" name="port"></integer>
+        <string javaType="java.lang.String" required="true" description="Configurable." caption="Database" name="database"></string>
+        <password javaType="java.lang.String" required="true" description="Configurable." caption="Password" name="password"></password>
+        <string javaType="java.lang.String" required="true" description="Configurable." caption="Username" name="username"></string>
+      </group>
+    </attribute-category>
+  </global-cloud-connector>
+  <cloud-connector abstract="true" image="icons/large/marklogic-connector-48x32.png" localId="abstractMarklogicConnectorGeneric" icon="icons/small/marklogic-connector-24x16.png" description="Interact with Marklogic." caption="Abstractmarklogicconnectorgeneric">
+    <attribute-category description="General." caption="General">
+      <group caption="Generic" id="abstractMarklogicConnectorGeneric">
+        <globalRef requiredType="http://www.mulesoft.org/schema/mule/marklogic/config" required="true" description="Specify which configuration to use for this invocation." caption="Config Reference" name="config-ref"></globalRef>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector extends="http://www.mulesoft.org/schema/mule/marklogic/abstractMarklogicConnectorGeneric" image="icons/large/marklogic-connector-48x32.png" localId="marklogic-connector" icon="icons/small/marklogic-connector-24x16.png" description="Cloud Connector." caption="MarkLogic" aliasId="org.mule.tooling.ui.modules.core.pattern.marklogic">
+    <attribute-category description="General." caption="General">
+      <group caption="Generic" id="marklogicConnectorGeneric">
+        <modeSwitch description="Operation." caption="Operation" name="Marklogic operations to execute">
+          <mode modeLabel="Begin transaction" modeId="http://www.mulesoft.org/schema/mule/marklogic/begin-transaction"></mode>
+          <mode modeLabel="Commit transaction" modeId="http://www.mulesoft.org/schema/mule/marklogic/commit-transaction"></mode>
+          <mode modeLabel="Multi statement" modeId="http://www.mulesoft.org/schema/mule/marklogic/multi-statement"></mode>
+          <mode modeLabel="Rollback transaction" modeId="http://www.mulesoft.org/schema/mule/marklogic/rollback-transaction"></mode>
+          <mode modeLabel="Single statement" modeId="http://www.mulesoft.org/schema/mule/marklogic/single-statement"></mode>
+        </modeSwitch>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="void" extends="http://www.mulesoft.org/schema/mule/marklogic/abstractMarklogicConnectorGeneric" abstract="true" image="icons/large/marklogic-connector-48x32.png" localId="begin-transaction" icon="icons/small/marklogic-connector-24x16.png" caption="Begin Transaction">
+    <attribute-category description="General." caption="General"></attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="void" extends="http://www.mulesoft.org/schema/mule/marklogic/abstractMarklogicConnectorGeneric" abstract="true" image="icons/large/marklogic-connector-48x32.png" localId="commit-transaction" icon="icons/small/marklogic-connector-24x16.png" caption="Commit Transaction">
+    <attribute-category description="General." caption="General"></attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.lang.String" extends="http://www.mulesoft.org/schema/mule/marklogic/abstractMarklogicConnectorGeneric" abstract="true" image="icons/large/marklogic-connector-48x32.png" localId="multi-statement" icon="icons/small/marklogic-connector-24x16.png" caption="Multi Statement">
+    <attribute-category description="General." caption="General">
+      <group caption="General" id="general">
+        <string javaType="java.lang.String" required="true" description="Query to be executed." caption="Adhoc Query" name="adhocQuery"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="void" extends="http://www.mulesoft.org/schema/mule/marklogic/abstractMarklogicConnectorGeneric" abstract="true" image="icons/large/marklogic-connector-48x32.png" localId="rollback-transaction" icon="icons/small/marklogic-connector-24x16.png" caption="Rollback Transaction">
+    <attribute-category description="General." caption="General"></attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.lang.String" extends="http://www.mulesoft.org/schema/mule/marklogic/abstractMarklogicConnectorGeneric" abstract="true" image="icons/large/marklogic-connector-48x32.png" localId="single-statement" icon="icons/small/marklogic-connector-24x16.png" caption="Single Statement">
+    <attribute-category description="General." caption="General">
+      <group caption="General" id="general">
+        <string javaType="java.lang.String" required="true" description="Query to be executed." caption="Adhoc Query" name="adhocQuery"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+</namespace>

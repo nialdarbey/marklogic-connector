@@ -1,0 +1,15 @@
+<!-- BEGIN_INCLUDE(marklogic:single-statement) -->
+    <marklogic:single-statement adhocQuery="#[map-payload:content]" />
+<!-- END_INCLUDE(marklogic:single-statement) -->
+<!-- BEGIN_INCLUDE(marklogic:begin-transaction) -->
+    <marklogic:begin-transaction  />
+<!-- END_INCLUDE(marklogic:begin-transaction) -->
+<!-- BEGIN_INCLUDE(marklogic:commit-transaction) -->
+    <marklogic:commit-transaction />
+<!-- END_INCLUDE(marklogic:commit-transaction) -->
+<!-- BEGIN_INCLUDE(marklogic:rollback-transaction) -->
+    <marklogic:rollback-transaction  />
+<!-- END_INCLUDE(marklogic:rollback-transaction) -->
+<!-- BEGIN_INCLUDE(marklogic:multi-statement) -->
+    <marklogic:multi-statement adhocQuery="#[map-payload:content]" />
+<!-- END_INCLUDE(marklogic:multi-statement) -->
